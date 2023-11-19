@@ -48,3 +48,23 @@ The following are some sample queries that can be executed for validation:
 
    ```bash
    npm install
+
+
+2. Run the Log Ingestor:
+
+node log_ingestor.js
+
+Ensure that Elasticsearch is running locally on the default port (9200).
+
+3. Open the Log Query Interface:
+
+Open the 'log_query_interface.html' file in a web browser.
+
+## Configuration
+Update Elasticsearch connection settings in 'log_ingestor.js' if needed.
+## Tips for Development
+Consider hybrid database solutions (relational + NoSQL) for a balance of structured data handling and efficient search capabilities.
+Database indexing and sharding might be beneficial for scalability and speed.
+Distributed systems or cloud-based solutions can ensure robust scalability.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
