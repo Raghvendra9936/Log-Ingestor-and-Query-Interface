@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Query Interface</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <h1>Log Query Interface</h1>
+
+    <form id="logQueryForm">
+        <label for="level">Level:</label>
+        <input type="text" id="level" name="level">
+
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message">
+
+        <label for="resourceId">Resource ID:</label>
+        <input type="text" id="resourceId" name="resourceId">
+
+        <label for="timestamp">Timestamp:</label>
+        <input type="text" id="timestamp" name="timestamp" placeholder="YYYY-MM-DDTHH:mm:ssZ">
+
+        <label for="traceId">Trace ID:</label>
+        <input type="text" id="traceId" name="traceId">
+
+        <label for="spanId">Span ID:</label>
+        <input type="text" id="spanId" name="spanId">
+
+        <label for="commit">Commit:</label>
+        <input type="text" id="commit" name="commit">
+
+        <label for="parentResourceId">Parent Resource ID:</label>
+        <input type="text" id="parentResourceId" name="metadata.parentResourceId">
+
+        <label for="dateRangeStart">Date Range Start:</label>
+        <input type="text" id="dateRangeStart" name="dateRangeStart" placeholder="YYYY-MM-DDTHH:mm:ssZ">
+
+        <label for="dateRangeEnd">Date Range End:</label>
+        <input type="text" id="dateRangeEnd" name="dateRangeEnd" placeholder="YYYY-MM-DDTHH:mm:ssZ">
+
+        <button type="button" onclick="queryLogs()">Search</button>
+    </form>
+
+    <div id="searchResults">
+        <!-- Display search results here -->
+    </div>
+
+    <script>
+        function queryLogs() {
+            const form = document.getElementById('logQueryForm');
+            const formData = new FormData(form);
+
+            fetch('http://localhost:3000/query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(Object.fromEntries(formData)),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultsDiv = document.getElementById('searchResults');
+                resultsDiv.innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+    <script>log_ingestor.js</script>
+</body>
+</html>
