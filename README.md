@@ -4,7 +4,7 @@ This application provides a Log Ingestor and Query Interface for efficiently han
 
 
 ## DEMO
-!alt text
+![alt text](Screenshot 2023-11-19 123813.png)
 
 
 ## Features
