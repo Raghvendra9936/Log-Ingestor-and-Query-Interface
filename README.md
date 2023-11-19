@@ -4,7 +4,7 @@ This application provides a Log Ingestor and Query Interface for efficiently han
 
 
 ## DEMO
-![image](Screenshot%202023-11-19%20123813.png)
+!https://github.com/Raghvendra9936/Log-Ingestor-and-Query-Interface/blob/main/Screenshot%202023-11-19%20123813.png
 
 ## Features
 
