@@ -51,8 +51,8 @@ The following are some sample queries that can be executed for validation:
 
 
 2. Run the Log Ingestor:
-
-node log_ingestor.js
+  ```bash
+  node log_ingestor.js
 
 Ensure that Elasticsearch is running locally on the default port (9200).
 
