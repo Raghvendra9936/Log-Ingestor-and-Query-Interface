@@ -2,6 +2,11 @@
 
 This application provides a Log Ingestor and Query Interface for efficiently handling log data. It allows you to ingest logs over HTTP and offers a simple interface for querying log data using full-text search or specific field filters.
 
+
+## DEMO
+!alt text
+
+
 ## Features
 
 ### Log Ingestor:
